@@ -32,7 +32,7 @@
 		<?php echo '<b>'.'Hình ảnh sản phẩm:'.'</b>'.'<br>'?>
 		<?= $this->Html->image('Hinhanh/'.$sanpham['img_product'],array('alt'=>'CakePHP'))?><br>
 		<div style="margin-left:100px;">
-			<?= $this->Html->link('Chi tiết',['action' => '../products/detailproduct', $sanpham->id_product]) ?>
+			<?= $this->Html->link('Chi tiết 3',['action' => '../products/detailproduct', $sanpham->id_product]) ?>
 			</div>
 		</div>
 	<?php endforeach; ?>
