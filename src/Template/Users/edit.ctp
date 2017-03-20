@@ -14,3 +14,11 @@
     echo $this->Form->button(__('Save User'));
     echo $this->Form->end();
 ?>
+<style>
+    form {
+        width: 180px;
+        margin-top: 1px;
+        margin-right: 1px;
+        margin-left: 568px;
+        }
+</style>

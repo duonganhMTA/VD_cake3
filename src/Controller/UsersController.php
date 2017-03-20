@@ -49,6 +49,7 @@ class UsersController extends AppController
     }
 
     public function edit($id){
+      
         $users = $this->Users->get($id);
         if ($this->request->is(['post', 'put'])) {
         	$this->request->data['id']=$id;
@@ -88,25 +89,21 @@ class UsersController extends AppController
     }
 
     public function login()
-    {
-        $this->viewBuilder()->layout(false);
+    { 
+     $this->viewBuilder()->layout(false);
         if ($this->request->is('post')) {
-            // $email = new Email('gmail');
-            // if($email
-            // ->to('thanhhuyen010695@gmail.com')
-            // ->subject('Hello world')
-            // ->send('My message test')){
-            //     $this->redirect('login');
-            // }else{
-
-            // }
+          // $email = new Email('gmail');
+          //       $email
+          //      ->to('thanhhuyen010695@gmail.com')
+          //      ->subject('Hello welcome to CLB Cellphone')
+          //      ->send('My message test');
             $user = $this->Auth->identify();
             if ($user) {
                 $this->Auth->setUser($user);
                 return $this->redirect($this->Auth->redirectUrl());
             }
-             $this->Flash->error('incorrect login');
-        }
+            $this->Flash->error(__('Invalid email or password, try again'));
+        } 
     }
 
     public function logout()
